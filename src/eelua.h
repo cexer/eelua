@@ -7,7 +7,11 @@
 #define EELUA_EELUA_H_
 
 #include "config.h"
+
+extern "C"
+{
 #include "lua.h"
+};
 
 int luaopen_eelua(lua_State *L);
 

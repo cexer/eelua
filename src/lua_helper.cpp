@@ -5,9 +5,12 @@
 
 #include "lua_helper.h"
 
+extern "C"
+{
 #include "lua.h"
 #include "lauxlib.h"
 #include "lualib.h"
+};
 
 #include "util.h"
 
@@ -24,7 +27,7 @@ msghandler(lua_State *L)
                                   luaL_typename(L, 1));
         }
     }
-    luaL_traceback(L, L, msg, 1);  /* append a standard traceback */
+    //luaL_traceback(L, L, msg, 1);  /* append a standard traceback */
     return 1;  /* return the traceback */
 }
 

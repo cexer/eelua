@@ -4,7 +4,7 @@ workspace "sln-eelua"
   project "eelua"
     kind "SharedLib"
     language "C"
-    files { "src/*.c" }
+    files { "src/*.cpp", "src/*.h", "include/*.h", "include/*.cpp"}
 
     includedirs { "include" }
     libdirs { "lib" }
@@ -13,10 +13,16 @@ workspace "sln-eelua"
     configuration "Debug"
       defines { "DEBUG" }
       symbols "On"
-
+	  linkoptions {"/MTd"}
+	  staticruntime "On"
+			
     configuration "Release"
       defines { "NDEBUG" }
       optimize "On"
-
+	  linkoptions {"/MT"}
+	  staticruntime "On"
+	  
     configuration { "gmake" }
       linkoptions { "-Wall -static-libgcc" }
+
+

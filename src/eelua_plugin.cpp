@@ -5,10 +5,13 @@
 
 #include "eelua_plugin.h"
 
+extern "C"
+{
 #include "lua.h"
 #include "lauxlib.h"
 #include "lualib.h"
 #include "eesdk.h"
+}
 
 #include "util.h"
 #include "eelua.h"

@@ -7,7 +7,12 @@
 #define EELUA_LUA_HELPER_H_
 
 #include "config.h"
+
+extern "C"
+{
 #include "lua.h"
+};
+
 
 int luaH_docall(lua_State *L, int narg, int nres, const char *extra_msg);
 
